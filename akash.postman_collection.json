@@ -1,0 +1,173 @@
+{
+  "info": {
+    "_postman_id": "d9bddf03-269e-45ac-9e4f-c50706950ec1",
+    "name": "akash",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44659005"
+  },
+  "item": [
+    {
+      "name": "tenants",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"naveen\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tenants",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "tenants"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/api/tenants \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\"name\": \"Naveen Corp\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "balance",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/tenants/{{tenantId}}/balance",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "tenants",
+            "{{tenantId}}",
+            "balance"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET http://localhost:3000/api/tenants/YOUR_TENANT_ID/balance"
+      },
+      "response": []
+    },
+    {
+      "name": "ledger",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/tenants/{{tenantId}}/ledger",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "tenants",
+            "{{tenantId}}",
+            "ledger"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET http://localhost:3000/api/tenants/YOUR_TENANT_ID/ledger"
+      },
+      "response": []
+    },
+    {
+      "name": "pan-basic",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-api-key",
+            "value": "fc4aef8999cc08fde559ebc9f3130292b4294da7"
+          },
+          {
+            "key": "x-tenant-id",
+            "value": "ten_1773978201501",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"pan\":\"CFQPV2264E\",\r\n    \"requestId\":\"12345\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/services/pan-basic",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "services",
+            "pan-basic"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/api/services/pan-basic \\\r\n-H \"Content-Type: application/json\" \\\r\n-H \"x-api-key: YOUR_API_KEY\""
+      },
+      "response": []
+    },
+    {
+      "name": "credits",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 10,\r\n  \"expiry\": \"2026-03-18\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tenants/{{tenantId}}/credits",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "tenants",
+            "{{tenantId}}",
+            "credits"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/api/tenants/YOUR_TENANT_ID/credits \\\r\n-H \"Content-Type: application/json\" \\\r\n-d '{\r\n  \"amount\": 50,\r\n  \"expiry\": \"2026-12-31\"\r\n}'"
+      },
+      "response": []
+    }
+  ]
+}
