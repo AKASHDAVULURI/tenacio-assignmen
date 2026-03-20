@@ -11,8 +11,8 @@ const TenantSchema = new Schema<ITenant>({
   tenantId: { type: String, required: true, unique: true },
   name: { type: String, required: true },
 
-  // ❌ Removed auto-generation
-  // ✅ Now API key will be generated via separate API
+  //  Removed auto-generation
+  //  Now API key will be generated via separate API
   apiKey: {
     type: String,
     unique: true,

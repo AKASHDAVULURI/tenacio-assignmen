@@ -25,7 +25,7 @@ export const createTenant = async (req: Request, res: Response) => {
   }
 };
 
-// ✅ NEW API → Generate API Key
+// NEW API → Generate API Key
 export const generateApiKey = async (req: Request, res: Response) => {
   try {
     const { tenantId } = req.params;
@@ -57,7 +57,7 @@ export const generateApiKey = async (req: Request, res: Response) => {
   }
 };
 
-// ✅ Add Credits (UNCHANGED)
+// Add Credits (UNCHANGED)
 export const addCredits = async (req: Request, res: Response) => {
   try {
     const { tenantId } = req.params;
@@ -89,7 +89,7 @@ export const addCredits = async (req: Request, res: Response) => {
   }
 };
 
-// ✅ Get Balance (UNCHANGED)
+//  Get Balance (UNCHANGED)
 export const getBalance = async (req: Request, res: Response) => {
   try {
     const { tenantId } = req.params;
@@ -111,7 +111,7 @@ export const getBalance = async (req: Request, res: Response) => {
   }
 };
 
-// ✅ Get Ledger (UNCHANGED)
+//  Get Ledger (UNCHANGED)
 export const getLedger = async (req: Request, res: Response) => {
   try {
     const { tenantId } = req.params;
