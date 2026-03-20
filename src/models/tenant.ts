@@ -1,21 +1,25 @@
 import { Schema, model, Document } from 'mongoose';
-import crypto from 'crypto';
 
 export interface ITenant extends Document {
   tenantId: string;
   name: string;
-  apiKey: string;
+  apiKey?: string; // optional now
   created_at: Date;
 }
 
 const TenantSchema = new Schema<ITenant>({
   tenantId: { type: String, required: true, unique: true },
   name: { type: String, required: true },
-  apiKey: { 
-    type: String, 
-    unique: true, 
-    default: () => crypto.randomBytes(20).toString('hex') 
+
+  // ❌ Removed auto-generation
+  // ✅ Now API key will be generated via separate API
+  apiKey: {
+    type: String,
+    unique: true,
+    sparse: true, // important for optional unique field
+    default: null
   },
+
   created_at: { type: Date, default: Date.now }
 });
 
